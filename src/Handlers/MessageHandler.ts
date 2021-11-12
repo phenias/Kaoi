@@ -71,7 +71,7 @@ export default class MessageHandler {
         )
         if (!command) return void M.reply('No Such Command Baka! Have you never seen someone use the command #help.')
         const user = await this.client.getUser(M.sender.jid)
-        if (user.ban) return void M.reply("You're Banned from using commands.")
+        if (user.ban) return void M.reply("Hey dude🙂 You're Banned from using commands.")
         const state = await this.client.DB.disabledcommands.findOne({ command: command.config.command })
         if (state) return void M.reply(`❌ This command is disabled${state.reason ? ` for ${state.reason}` : ''}`)
         if (!command.config?.dm && M.chat === 'dm') return void M.reply('This command can only be used in groups')
